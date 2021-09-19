@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get '/home',             as: 'home',           to: 'home#index'
     get '/sessions/:token',  as: 'session_create', to: 'sessions#create'
     resources :sessions,    only: [:destroy]
+    resources :logins,      only: [:new, :create]
   end
   get '/landing', to: 'landing#index', as: :landing
   root to: "landing#index"

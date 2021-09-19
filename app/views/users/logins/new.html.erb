@@ -1,0 +1,19 @@
+<%= form_for(user, local: true,
+              url: users_logins_path,   # NEW MUST BE PLURAL for POST
+              id: "new-login-form", class: "user" ) do |form|  %>
+
+  <div class="field">
+    <label class="label">Login Email for Access-Link</label>
+    <div class="control">
+      <%= form.email_field :email,
+                            placeholder: "Email",
+                            class: 'input' %>
+    </div>
+    <p class="help"></p>
+  </div>
+
+  <div class="control">
+    <%= form.submit("Get Access-Link", class: "button is-success") %>
+  </div>
+
+<% end %>
