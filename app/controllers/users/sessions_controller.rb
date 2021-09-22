@@ -19,8 +19,7 @@ class Users::SessionsController < Users::ApplicationController
 
   # allow a user to logout / destroy session if desired
   def destroy
-    user = current_user
-    if user
+    if current_user
       session[:user_id] = nil
       flash[:notice] = "logout successful"
     else
